@@ -9,6 +9,25 @@ Vincent Lin
 Anish Gaonkar
 
 
+## 📂 Dataset Information
+
+Due to GitHub's 100MB upload limit, the full MovieLens dataset is **not included** in this repository.
+
+We provide a **sample subset** (`ratings_sample.csv`) in the `/data/` folder for testing/demo purposes.
+
+To run the full recommendation engine:
+
+1. Download the full dataset from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
+2. Place the following files in the `data/` directory:
+   - `ratings.csv`
+   - `movies.csv`
+   - `tags.csv`
+
+These files will not be tracked by Git to avoid size issues.
+
+
+----------------------------------------------------------
+
 <H1> COP3530 - Project 3 </h1>
 This is the template for Project 3 repositories. It includes all the assignment instructions and documentation to help you use GitHub.
 
