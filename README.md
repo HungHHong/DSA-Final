@@ -1,3 +1,14 @@
+
+Original document:
+https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0
+
+
+Contributor:
+Hung Hong
+Vincent Lin
+Anish Gaonkar
+
+
 <H1> COP3530 - Project 3 </h1>
 This is the template for Project 3 repositories. It includes all the assignment instructions and documentation to help you use GitHub.
 
