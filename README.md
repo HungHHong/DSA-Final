@@ -3,10 +3,10 @@ Original document:
 https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0
 
 
-Contributor:
-Hung Hong
-Vincent Lin
-Anish Gaonkar
+**Contributors:**
+- [Hung Hong](https://github.com/HungHHong)
+- [Vincent Lin](https://github.com/vinc3ntl1n)
+- [Anish Gaonkar](https://github.com/anishgkr21)
 
 
 ## 📂 Dataset Information
@@ -15,13 +15,11 @@ Due to GitHub's 100MB upload limit, the full MovieLens dataset is **not included
 
 We provide a **sample subset** (`ratings_sample.csv`) in the `/data/` folder for testing/demo purposes.
 
-To run the full recommendation engine:
+To run the full model:
 
 1. Download the full dataset from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
 2. Place the following files in the `data/` directory:
    - `ratings.csv`
-   - `movies.csv`
-   - `tags.csv`
 
 These files will not be tracked by Git to avoid size issues.
 
