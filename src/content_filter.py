@@ -70,3 +70,4 @@ def use_content_filter(title: str, k: int = 10) -> pd.DataFrame:
     sims.sort(key=lambda x: x[1], reverse=True)
     top = [j for j, _ in sims[:k]]
     return movies.iloc[top][["title"]]
+
