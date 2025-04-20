@@ -23,6 +23,30 @@ To run the full model:
 
 These files will not be tracked by Git to avoid size issues.
 
+## 🧪 Requirements & Installation
+
+This project uses Python and a few external libraries. To set up the environment:
+
+1. Make sure you have Python 3.8+ installed
+2. Install required libraries:
+
+```bash```
+pip install -r requirements.txt
+
+
+## ⚠️ From-Scratch Implementation Note
+
+Per course guidelines, we have implemented **collaborative filtering** and **content-based filtering** entirely from scratch, without using high-level ML libraries such as `scikit-learn` or `Surprise`.
+
+- All similarity calculations (e.g., cosine similarity) are implemented manually in Python.
+- No external libraries were used for model fitting or prediction logic.
+- We only used `pandas` for data loading and basic preprocessing, and `matplotlib`/`seaborn` for optional visualizations.
+
+Please refer to the following files for our custom implementations:
+- `src/collaborative_filter.py` — user-user collaborative filtering
+- `src/content_filter.py` — content-based filtering with manual cosine similarity
+
+
 
 ----------------------------------------------------------
 
