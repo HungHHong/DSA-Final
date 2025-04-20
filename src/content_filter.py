@@ -66,8 +66,36 @@ def use_content_filter(title: str, k: int = 10) -> pd.DataFrame:
     if len(idxs) == 0:
         raise ValueError(f"Movie '{title}' not found.")
     idx = idxs[0]
-    sims = [(j, _cosine(idx, j)) for j in range(len(movies)) if j != idx]
+
+    btitle = re.sub(r"\(\d{4}\)", "", title).strip().lower()
+    sequence_movie = re.compile(rf"^{re.escape(btitle)}(\s|:|\d|part|episode)", re.IGNORECASE)
+
+    sims = []
+    for j in range(len(movies)):
+        if j == idx:
+            continue
+        potientail_movie = movies.iloc[j]["title"].lower()
+        if sequence_movie.match(potientail_movie):
+            continue  # skip sequels with similar base title
+        sims.append((j, _cosine(idx, j)))
+
     sims.sort(key=lambda x: x[1], reverse=True)
     top = [j for j, _ in sims[:k]]
     return movies.iloc[top][["title"]]
 
+'''
+if __name__ == "__main__":
+    while True:
+        q = input("\nmovie title ")
+        if not q:
+            break
+        try:
+            result = use_content_filter(q, 5)
+            print("\nsimilar movies")
+            for title in result["title"]:
+                row = movies[movies["title"] == title].iloc[0]
+                print(f"- {row['title']}\n  Tags: {row['tag']}\n")
+            print(result.to_string(index=False))
+        except ValueError as x:
+            print(x)
+'''
