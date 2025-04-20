@@ -61,8 +61,8 @@ def _cosine(i: int, j: int) -> float:
         return 0.0
     return dot / (norms[i] * norms[j])
 
-def use_content_filter(title: str, k: int = 10) -> pd.DataFrame:
-    idxs = movies.index[movies["title"].str.lower() == title.lower()]
+def use_content_filter(title: str, movies_df: pd.DataFrame,  k: int = 10) -> pd.DataFrame:
+    idxs = movies_df.index[movies_df["title"].str.lower() == title.lower()]
     if len(idxs) == 0:
         raise ValueError(f"Movie '{title}' not found.")
     idx = idxs[0]
@@ -71,17 +71,17 @@ def use_content_filter(title: str, k: int = 10) -> pd.DataFrame:
     sequence_movie = re.compile(rf"^{re.escape(btitle)}(\s|:|\d|part|episode)", re.IGNORECASE)
 
     sims = []
-    for j in range(len(movies)):
+    for j in range(len(movies_df)):
         if j == idx:
             continue
-        potientail_movie = movies.iloc[j]["title"].lower()
+        potientail_movie = movies_df.iloc[j]["title"].lower()
         if sequence_movie.match(potientail_movie):
             continue  # skip sequels with similar base title
         sims.append((j, _cosine(idx, j)))
 
     sims.sort(key=lambda x: x[1], reverse=True)
     top = [j for j, _ in sims[:k]]
-    return movies.iloc[top][["title"]]
+    return movies_df.iloc[top][["title"]]
 
 '''
 if __name__ == "__main__":

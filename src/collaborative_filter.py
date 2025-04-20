@@ -33,26 +33,38 @@ def movie_predictor(Row: np.ndarray, col: np.ndarray, u_index: int, i_index: int
     return np.dot(row_k[valid_Rating], col_k[valid_Rating] / col_k[valid_Rating].sum()) #np.dot is used to find the weighted average
 
 
+def user_Recs(ratings_df: pd.DataFrame,
+              movies_df: pd.DataFrame,
+              user_id: int,
+              k: int = 30,
+              top_Movie: int = 10,
+              genre: str = None) -> list[tuple[str, float]]:
 
-def user_Recs(ratings_df: pd.DataFrame, movies_df: pd.DataFrame, user_id: int, k: int = 30, top_Movie: int = 10) -> list[tuple[str,float]]:
-    Row_df = movie_Matrix(ratings_df) # movie_Matrix returns a pandas DataFrame
+    Row_df = movie_Matrix(ratings_df)
     if user_id not in Row_df.index:
         raise KeyError('userID not found')
-    Rows = Row_df.values #values yields NumPy array
-    Cols = user_similarityRating(Rows) # computes similarity on NumPy array
-    u_idx = Row_df.index.get_loc(user_id) # get_loc finds the integer location of user_id
-
-    no_Rating = np.where(Rows[u_idx] == 0)[0] # np.where is used to find indices of unrated movies.
-    prediction = [(col, movie_predictor(Rows, Cols, u_idx, col, k)) for col in no_Rating]
-    prediction.sort(key=lambda x: x[1], reverse=True) ## .sort on python list of tuples
+    Rows = Row_df.values
+    Cols = user_similarityRating(Rows)
+    u_idx = Row_df.index.get_loc(user_id)
 
     movie_ids = Row_df.columns.to_numpy()
-#.loc and .iloc are used to map movieId -> title
+    unrated = np.where(Rows[u_idx] == 0)[0]
+
+    if genre:
+        genres_ser = movies_df.set_index("movieId").loc[movie_ids, "genres"]
+        unrated_Movies = genres_ser.str.contains(genre, case=False, na=False).to_numpy()
+        unrated = unrated[unrated_Movies[unrated]]
+
+    prediction = [
+        (col, movie_predictor(Rows, Cols, u_idx, col, k))
+        for col in unrated
+    ]
+    prediction.sort(key=lambda x: x[1], reverse=True)
+
     return [
         (
-            movies_df.loc[movies_df.movieId == movie_ids[col], 'title']. iloc[0], round(score, 2)
+            movies_df.loc[movies_df.movieId == movie_ids[col], 'title'].iloc[0],
+            round(score, 2)
         )
         for col, score in prediction[:top_Movie]
-
-
     ]
