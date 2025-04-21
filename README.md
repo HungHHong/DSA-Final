@@ -1,6 +1,7 @@
 
-**Original document:**
-- [Files](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
+**Linked Document:**
+- [Final Report](https://docs.google.com/document/d/1GeteG4TFulc1kbwaCojoegezWCc4IKZ2SOiQqmC_MBY/edit?usp=sharing)
+- [Original File](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
 
 # 🎬 Reelgorithm — A Personalized Movie Recommender System
 
