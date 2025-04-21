@@ -2,78 +2,82 @@
 **Original document:**
 - [Files](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
 
-
 # 🎬 Reelgorithm — A Personalized Movie Recommender System
 
-## 🚀 Project Overview
+## 👥 Team Info
 
-**Reelgorithm** is a personalized movie recommendation system that helps users quickly find movies they’ll love based on their favorite movie, without endlessly scrolling through options.  
-It uses two distinct recommendation algorithms — **Collaborative Filtering** and **Content-Based Filtering** — both implemented from scratch.
-
-This project was developed for **COP3530: Data Structures and Algorithms**, and demonstrates our understanding of algorithm design, matrix manipulation, and real-word applicationl of recommender systems.
-
----
-
-## 👨‍💻 Contributors
-
-- [Hung Hong](https://github.com/HungHHong)
-- [Vincent Lin](https://github.com/vinc3ntl1n)
-- [Anish Gaonkar](https://github.com/anishgkr21)
+- **Team Name**: Reelgorithm  
+- **Contributors**:
+  - [Hung Hong](https://github.com/HungHHong)
+  - [Vincent Lin](https://github.com/vinc3ntl1n)
+  - [Anish Gaonkar](https://github.com/anishgkr21)
+- **GitHub Repo**: [https://github.com/HungHHong/DSA-Final](https://github.com/HungHHong/DSA-Final)
+- **Demo Video Link**: [https://youtube.com/Place_Holder](https://youtube.com/Place_Holder)
 
 ---
 
-## 📂 Dataset Information
+## 🚀 Project Objective
 
-We used the [MovieLens dataset](https://grouplens.org/datasets/movielens/), which includes:
+In the age of digital streaming, users are overwhelmed with choices. Reelgorithm helps users quickly find movies they’ll enjoy by offering personalized recommendations using two core techniques:
 
-- Over 32 million ratings
-- 2 million tag applications
-- 87,000+ movies
+1. **Content-Based Filtering** (based on movie tags, genres, and titles)
+2. **Collaborative Filtering** (based on user similarity and shared preferences)
 
-Due to GitHub’s 100MB file limit, we provide smaller set of **sample file** (`ratings_sample.csv`) in the `/data/` folder for testing.
-
-> To run with full data, download from [MovieLens](https://grouplens.org/datasets/movielens/) and place the following files into `/data/`:
-> - `ratings.csv`
-> - `movies.csv`
-> - `tags.csv`
+Both algorithms are implemented **from scratch**, without using external ML libraries.
 
 ---
 
 ## 🧠 Features
 
--  Two recommendation systems:
-   - Content-Based (TF-IDF + Cosine Similarity)
-   - Collaborative Filtering (User-user similarity via dot product)
--  Tkinter GUI for user interaction
--  Genre filtering, movie search, and dynamic bar chart visualization
--  Fully modular, readable code in `/src/`
+- Manual TF-IDF vector generation and cosine similarity for content filtering
+- Manual user-user cosine similarity and rating prediction for collaborative filtering
+- Tkinter-based GUI with genre selection, search, and visual recommendations
+- Matplotlib bar chart of personalized predicted ratings
+- Optional genre-based filtering for refined results
 
 ---
 
-## 📜 From-Scratch Implementation Note
+## 📂 Dataset Information
 
-Per course guidelines:
-- **No high-level ML libraries** (`sklearn`, `surprise`) were used
-- Cosine similarity, TF-IDF, and collaborative scoring were written in **pure Python**
-- Only the following external libraries were used for **non-ML purposes**:
-  - `pandas` — data loading & manipulation
-  - `matplotlib`, `seaborn` — visualization
-  - `tkinter` — GUI
+We use the **MovieLens dataset**, which includes:
+- 32 million+ ratings
+- 2 million+ tag applications
+- 87,000+ movies
+- By 200,000 users collected 10/2023
 
-Implemented Files:
-- `src/collaborative_filter.py`
-- `src/content_filter.py`
-- `src/preprocess.py`
+Due to GitHub's 100MB file limit, we only include:
+- `ratings_sample.csv` (10,000 ratings)
+- `movies.csv`
+- `tags.csv`
+- `links.csv`
+
+To run the full model:
+1. Download full data from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
+2. Place these files in the `/data/` directory:
+   - `ratings.csv`
+
+
+>  These files are ignored in Git via `.gitignore`
+
+---
+
+## ⚠️ From-Scratch Implementation
+
+Per guidelines:
+
+- All core algorithms are implemented manually
+-  Cosine similarity and TF-IDF are computed using `math`, `collections`, and `numpy`
+-  Only `pandas` is used for loading and filtering CSV data
+-  `matplotlib`, `seaborn`, and `tkinter` are used for GUI and visualization
 
 ---
 
 ## 🧪 Requirements & Installation
 
-This project uses Python 3.12
+**Python version**: 3.8+
 
-### 1. Install dependencies
-
-```bash
+### 📦 Install dependencies:
+```bash```
 pip install -r requirements.txt
 
 
