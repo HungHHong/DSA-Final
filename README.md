@@ -3,48 +3,78 @@
 - [Files](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
 
 
-**Contributors:**
+# 🎬 Reelgorithm — A Personalized Movie Recommender System
+
+## 🚀 Project Overview
+
+**Reelgorithm** is a personalized movie recommendation system that helps users quickly find movies they’ll love based on their favorite movie, without endlessly scrolling through options.  
+It uses two distinct recommendation algorithms — **Collaborative Filtering** and **Content-Based Filtering** — both implemented from scratch.
+
+This project was developed for **COP3530: Data Structures and Algorithms**, and demonstrates our understanding of algorithm design, matrix manipulation, and real-word applicationl of recommender systems.
+
+---
+
+## 👨‍💻 Contributors
+
 - [Hung Hong](https://github.com/HungHHong)
 - [Vincent Lin](https://github.com/vinc3ntl1n)
 - [Anish Gaonkar](https://github.com/anishgkr21)
 
+---
 
 ## 📂 Dataset Information
 
-Due to GitHub's 100MB upload limit, the full MovieLens dataset is **not included** in this repository.
+We used the [MovieLens dataset](https://grouplens.org/datasets/movielens/), which includes:
 
-We provide a **sample subset** (`ratings_sample.csv`) in the `/data/` folder for testing/demo purposes.
+- Over 32 million ratings
+- 2 million tag applications
+- 87,000+ movies
 
-To run the full model:
+Due to GitHub’s 100MB file limit, we provide smaller set of **sample file** (`ratings_sample.csv`) in the `/data/` folder for testing.
 
-1. Download the full dataset from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
-2. Place the following files in the `data/` directory:
-   - `ratings.csv`
+> To run with full data, download from [MovieLens](https://grouplens.org/datasets/movielens/) and place the following files into `/data/`:
+> - `ratings.csv`
+> - `movies.csv`
+> - `tags.csv`
 
-These files will not be tracked by Git to avoid size issues.
+---
+
+## 🧠 Features
+
+-  Two recommendation systems:
+   - Content-Based (TF-IDF + Cosine Similarity)
+   - Collaborative Filtering (User-user similarity via dot product)
+-  Tkinter GUI for user interaction
+-  Genre filtering, movie search, and dynamic bar chart visualization
+-  Fully modular, readable code in `/src/`
+
+---
+
+## 📜 From-Scratch Implementation Note
+
+Per course guidelines:
+- **No high-level ML libraries** (`sklearn`, `surprise`) were used
+- Cosine similarity, TF-IDF, and collaborative scoring were written in **pure Python**
+- Only the following external libraries were used for **non-ML purposes**:
+  - `pandas` — data loading & manipulation
+  - `matplotlib`, `seaborn` — visualization
+  - `tkinter` — GUI
+
+Implemented Files:
+- `src/collaborative_filter.py`
+- `src/content_filter.py`
+- `src/preprocess.py`
+
+---
 
 ## 🧪 Requirements & Installation
 
-This project uses Python and a few external libraries. To set up the environment:
+This project uses Python 3.12
 
-1. Make sure you have Python 3.8+ installed
-2. Install required libraries:
+### 1. Install dependencies
 
-```bash```
+```bash
 pip install -r requirements.txt
-
-
-## ⚠️ From-Scratch Implementation Note
-
-Per course guidelines, we have implemented **collaborative filtering** and **content-based filtering** entirely from scratch, without using high-level ML libraries such as `scikit-learn` or `Surprise`.
-
-- All similarity calculations (e.g., cosine similarity) are implemented manually in Python.
-- No external libraries were used for model fitting or prediction logic.
-- We only used `pandas` for data loading and basic preprocessing, and `matplotlib`/`seaborn` for optional visualizations.
-
-Please refer to the following files for our custom implementations:
-- `src/collaborative_filter.py` — user-user collaborative filtering
-- `src/content_filter.py` — content-based filtering with manual cosine similarity
 
 
 
