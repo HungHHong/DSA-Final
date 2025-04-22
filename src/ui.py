@@ -13,7 +13,7 @@ sns.set_theme(style="darkgrid")
 def draw_chart(frame, titles, scores, x_label, title, palette):
     for j in frame.winfo_children():
         j.destroy()
-    fig, ax = plt.subplots(figsize=(6, 3))
+    fig, ax = plt.subplots(figsize=(6, 5))
     sns.barplot(x=scores, y=titles, ax=ax, palette=palette, legend=False)
     ax.set_xlabel(x_label)
     ax.set_title(title, pad=14)
@@ -26,7 +26,8 @@ class Application(tk.Tk):
     def __init__(self, ratings_df, movies_df, all_genres):
         super().__init__()
         self.title("🎬 Reelgorithm — Movie Recommender")
-        self.geometry("1100x700")
+        # self.geometry("1100x700")
+        self.state("zoomed")
         self.configure(bg="white")
         self.protocol("WM_DELETE_WINDOW", self.on_close)
 
