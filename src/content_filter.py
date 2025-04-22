@@ -83,19 +83,3 @@ def use_content_filter(title: str, movies_df: pd.DataFrame,  k: int = 10) -> pd.
     top = [j for j, _ in sims[:k]]
     return movies_df.iloc[top][["title"]]
 
-'''
-if __name__ == "__main__":
-    while True:
-        q = input("\nmovie title ")
-        if not q:
-            break
-        try:
-            result = use_content_filter(q, 5)
-            print("\nsimilar movies")
-            for title in result["title"]:
-                row = movies[movies["title"] == title].iloc[0]
-                print(f"- {row['title']}\n  Tags: {row['tag']}\n")
-            print(result.to_string(index=False))
-        except ValueError as x:
-            print(x)
-'''
