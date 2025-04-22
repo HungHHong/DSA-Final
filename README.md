@@ -78,8 +78,9 @@ Per guidelines:
 **Python version**: 3.8+
 
 ### 📦 Install dependencies:
-```bash```
+```bash
 pip install -r requirements.txt
+```
 
 
 
