@@ -10,12 +10,16 @@ import tkinter as tk
 from pathlib import Path
 import pandas as pd
 from ui import Application
+from preprocess import load_data
+
 
 here = Path(__file__).resolve().parent
 Root = here.parent
 data_path = Root / 'data'
 
-ratings_df = pd.read_csv(data_path / 'ratings_sample.csv', usecols=['userId', 'movieId', 'rating'])
+ratings_df, movies_df, _ = load_data()
+ratings_df = ratings_df[['userId', 'movieId', 'rating']]
+movies_df = movies_df[['movieId', 'title', 'genres']]
 movies_df = pd.read_csv(data_path / 'movies.csv', usecols=['movieId', 'title', 'genres'])
 all_genres = sorted({i for cell in movies_df["genres"].dropna() for i in cell.split("|")})
 
