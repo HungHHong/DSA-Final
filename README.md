@@ -52,17 +52,35 @@ Due to GitHub's 100MB file limit, we only include:
 - `tags.csv`
 - `links.csv`
 
-To run the full model:
-1. Download full data from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
-2. Place these files in the `/data/` directory:
+---
+
+### ⚙️ Dynamic Dataset Loading
+
+The program will automatically load the appropriate dataset:
+
+- ✅ If `ratings.csv` is present in the `/data/` directory, it will be used
+- 🔁 Otherwise, it will fall back to `ratings_sample.csv` for faster testing/demo
+
+
+
+### 📥 To Use the Full Dataset
+
+1. Download from: [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
+2. Place these files into the `/data/` folder:
    - `ratings.csv`
 
 
->  These files are ignored in Git via `.gitignore`
+
+### ⚠️ Full Dataset Warning
+
+> When using the full dataset (`ratings.csv`), expect a delay when launching the program.  
+> It contains over **32 million ratings**, and processing that volume of data will take longer at startup.
 
 ---
 
-## ⚠️ From-Scratch Implementation
+---
+
+## ✏️ From-Scratch Implementation
 
 Per guidelines:
 
