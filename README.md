@@ -47,7 +47,7 @@ We use the **MovieLens dataset**, which includes:
 - By 200,000 users collected 10/2023
 
 Due to GitHub's 100MB file limit, we only include:
-- `ratings_sample.csv` (10,000 ratings)
+- `ratings_sample.csv` (100,000 ratings)
 - `movies.csv`
 - `tags.csv`
 - `links.csv`
@@ -73,9 +73,9 @@ The program will automatically load the appropriate dataset:
 
 ### ⚠️ Full Dataset Warning
 
-> When using the full dataset (`ratings.csv`), expect a delay when launching the program.  
-> It contains over **32 million ratings**, and processing that volume of data will take longer at startup.
-
+The full dataset (`ratings.csv`) contains over 32 million entries.  
+When loaded into memory as a dense matrix for collaborative filtering, it may require **more than 126 GB of RAM**.  
+If your are hardward bound, we would recommended to use our included `ratings_sample.csv` file instead.
 ---
 
 ---
