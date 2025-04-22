@@ -73,9 +73,9 @@ The program will automatically load the appropriate dataset:
 
 ### ⚠️ Full Dataset Warning
 
-The full dataset (`ratings.csv`) contains over 32 million entries.  
-When loaded into memory as a dense matrix for collaborative filtering, it may require **more than 126 GB of RAM**.  
-If your are hardward bound, we would recommended to use our included `ratings_sample.csv` file instead.
+ The full dataset (`ratings.csv`) contains over 32 million entries.  
+ When loaded into memory as a dense matrix for collaborative filtering, it may require **more than 126 GB of RAM**.  
+ If you are hardware-bound, we would recommend using our included `ratings_sample.csv` file instead.
 ---
 
 ---
