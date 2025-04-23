@@ -1,7 +1,10 @@
 
 **Linked Document:**
 - [Final Report](https://docs.google.com/document/d/1GeteG4TFulc1kbwaCojoegezWCc4IKZ2SOiQqmC_MBY/edit?usp=sharing)
-- [Original File](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
+- [Group Feedback](https://docs.google.com/document/d/1ZYKnlkk-oh-YQNZKPOK6kEnS8F6YW7GAukH5owi9oaI/edit?usp=sharing)
+
+
+- [Original Report](https://docs.google.com/document/d/1sG4ePXkaOlWJKa9pY1T0bygZrBFEEFrH-XFEYg-Buek/edit?tab=t.0)
 
 # 🎬 Reelgorithm — A Personalized Movie Recommender System
 
@@ -12,8 +15,10 @@
   - [Hung Hong](https://github.com/HungHHong)
   - [Vincent Lin](https://github.com/vinc3ntl1n)
   - [Anish Gaonkar](https://github.com/anishgkr21)
+  
+
 - **GitHub Repo**: [https://github.com/HungHHong/DSA-Final](https://github.com/HungHHong/DSA-Final)
-- **Demo Video Link**: [https://youtube.com/Place_Holder](https://youtube.com/Place_Holder)
+- **Demo Video Link**: [https://www.youtube.com/watch?v=rSET2bbL8fs](https://www.youtube.com/watch?v=rSET2bbL8fs)
 
 ---
 
